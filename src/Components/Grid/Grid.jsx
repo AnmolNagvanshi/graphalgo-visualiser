@@ -15,7 +15,7 @@ const GridNodeType = Object.freeze({
 });
 
 const START_POS = {row : 6, col : 2};
-const END_POS = {row: 16, col: 35};
+const END_POS = {row: 16, col: 32};
 
 export default function Grid() {
 
