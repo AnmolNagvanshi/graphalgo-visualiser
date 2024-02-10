@@ -1,0 +1,54 @@
+.grid-container {
+    box-sizing: border-box;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    margin-left: 10px;
+    margin-right: 10px;
+
+    display: grid;
+    /* grid-template-columns: repeat(37, 1fr); */
+
+    /* gap: 20px; */
+    /* display: grid; */
+    /* flex-direction: row; */
+    justify-content: center;
+    /* align-items: flex-end; */
+    /* grid-auto-flow: column; */
+
+    max-width: 100%;
+    /* background-color: aquamarine; */
+    /* height: 90vh; */
+}
+
+.main-nav {
+    box-sizing: border-box;
+    /* max-width: 100%; */
+    /* background-color: rgb(67, 204, 151); */
+    display: flex;
+    /* justify-content: space-between; */
+    margin-bottom: 10px;
+    height: 40px;
+}
+
+.button {
+    /* appearance: none; */
+    /* border: 1px lightblue solid; */
+    /* outline: none; */
+    /* background: none; */
+}
+
+/* 
+.grid-canvas {
+    width: auto;
+    height: auto;
+} */
+
+
+.grid-row {
+    /* border: 1px solid black; */
+} 
+
+/* 
+.node-path-animation {
+    background-color: aqua;
+} */
