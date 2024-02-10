@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/graphalgo-visualiser/static/css/main.ecef1314.css",
+    "main.js": "/graphalgo-visualiser/static/js/main.47d1f35f.js",
+    "static/js/787.2b6c5a30.chunk.js": "/graphalgo-visualiser/static/js/787.2b6c5a30.chunk.js",
+    "index.html": "/graphalgo-visualiser/index.html",
+    "main.ecef1314.css.map": "/graphalgo-visualiser/static/css/main.ecef1314.css.map",
+    "main.47d1f35f.js.map": "/graphalgo-visualiser/static/js/main.47d1f35f.js.map",
+    "787.2b6c5a30.chunk.js.map": "/graphalgo-visualiser/static/js/787.2b6c5a30.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.ecef1314.css",
+    "static/js/main.47d1f35f.js"
+  ]
+}
