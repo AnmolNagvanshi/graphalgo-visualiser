@@ -4,6 +4,7 @@ import GridNode from '../GridNode/GridNode';
 import './Grid.css';
 import {dfs} from '../../algorithms/depth-first-search';
 import {bfs} from '../../algorithms/breadth-first-search';
+import {bidirectionalBfs} from '../../algorithms/bidirectional-bfs';
 import {MazeGenerator} from '../../algorithms/maze-generation';
 
 
@@ -15,7 +16,7 @@ const GridNodeType = Object.freeze({
 });
 
 const START_POS = {row : 6, col : 2};
-const END_POS = {row: 16, col: 32};
+const END_POS = {row: 22, col: 38};
 
 export default function Grid() {
 
@@ -83,7 +84,7 @@ export default function Grid() {
             const value = row * NUM_COLS + col;
 
             let type = GridNodeType.WORKER_NODE;
-            if(row === START_POS.row && col === START_POS.col )
+            if(row === START_POS.row && col === START_POS.col)
                 type = GridNodeType.START_NODE;
             else if(row === END_POS.row && col === END_POS.col)
                 type = GridNodeType.END_NODE;
@@ -217,6 +218,38 @@ export default function Grid() {
         reactivateButton(time + 500);
     }
 
+    function handleClickBidirectionalBfs() {
+        // resetVisitedArray();
+        const path = [];
+        console.log("Num:", NUM_ROWS, NUM_COLS);
+        const {distance, shortestPath} = bidirectionalBfs(squares, visited, deepCopy2DArray(visited), START_POS.row, START_POS.col, 
+                                            END_POS.row, END_POS.col, path, NUM_ROWS, NUM_COLS);
+
+        console.log(path);
+        console.log("bidirectional bfs");
+        console.log("distance: " + distance);
+        console.log("shortestPath: ", shortestPath);
+
+        animatePathBfs(path, shortestPath);
+        pathBfs = path;
+        shortestPathBfs = shortestPath;
+        lastRanAlgo = "BIBFS";
+        console.log('Bidirectional bfs running');
+        console.log(lastRanAlgo);
+    }
+
+    function deepCopy2DArray(array) {
+        let newArray = [];
+        for (let i = 0; i < array.length; i++) {
+            let innerArray = [];
+            for (let j = 0; j < array[i].length; j++) {
+                innerArray.push(array[i][j]);
+            }
+            newArray.push(innerArray);
+        }
+        return newArray;
+    }
+
     function reactivateButton(time) {
         setTimeout(() => {
             // setButtonDisabled(false);
@@ -230,19 +263,6 @@ export default function Grid() {
         const maze = mazeGenerator.generateMaze(START_POS.row, START_POS.col, END_POS.row, END_POS.col);
         console.log(maze);
         let time = 20;
-        // for(let row = 0; row < NUM_ROWS; row++) {
-        //     for(let col = 0; col < NUM_COLS; col++) {
-        //         if(maze[row][col] === 1 || isNotValid(row, col)) continue;
-        //         const nodeValue = row * NUM_COLS + col;
-        //         console.log(row, col, nodeValue);
-        //         visited[row][col] = true;
-        //         setTimeout(() => {
-        //             const gridNode = document.getElementById(nodeValue);
-        //             gridNode.classList.add('node-maze');
-        //         }, time);
-        //         time += 20;
-        //     }
-        // }
 
         for(let col = 0; col < NUM_COLS; col++) {
             for(let row = 0; row < NUM_ROWS; row++) {
@@ -300,6 +320,7 @@ export default function Grid() {
             <div className='main-nav'>
                 <button className='dfs-button button' onClick={handleClickDfs} >Start DFS</button>
                 <button className='bfs-button button' onClick={handleClickBfs} >Start BFS</button>
+                <button className='bibfs-button button' onClick={handleClickBidirectionalBfs} >Start Bi BFS</button>
                 <button className='maze-button button' onClick={handleClickMaze} >Create Maze</button>
                 <button className='reset-button button' onClick={handleClickReset} >Reset</button>
             </div>
