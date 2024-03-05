@@ -47,6 +47,10 @@
     animation-fill-mode: forwards; */
 }
 
+.node-stop {
+    background-color: green;
+}
+
 @keyframes animate-maze {
     to {
         background-color: grey;

@@ -16,7 +16,7 @@ const GridNodeType = Object.freeze({
 });
 
 const START_POS = {row : 6, col : 2};
-const END_POS = {row: 22, col: 38};
+const END_POS = {row: 19, col: 34};
 
 export default function Grid() {
 
@@ -257,6 +257,17 @@ export default function Grid() {
         }, time);
     }
 
+
+    const STOP_NODE = {row : Math.floor(NUM_ROWS / 2), col : Math.floor(NUM_COLS / 2)};
+    let isStopNodeAdded = false;
+
+    function handleClickAddStop() {
+        const nodeValue = STOP_NODE.row * NUM_COLS + STOP_NODE.col;
+        const gridNode = document.getElementById(nodeValue);
+        gridNode.classList.add('node-stop');
+        isStopNodeAdded = true;
+    }
+
     function handleClickMaze() {
         lastRanAlgo = "nothing";
         const mazeGenerator = new MazeGenerator(NUM_ROWS, NUM_COLS);
@@ -322,6 +333,7 @@ export default function Grid() {
                 <button className='bfs-button button' onClick={handleClickBfs} >Start BFS</button>
                 <button className='bibfs-button button' onClick={handleClickBidirectionalBfs} >Start Bi BFS</button>
                 <button className='maze-button button' onClick={handleClickMaze} >Create Maze</button>
+                <button className='bomb-button button' onClick={handleClickAddStop} >Add a Stop</button>
                 <button className='reset-button button' onClick={handleClickReset} >Reset</button>
             </div>
             <div className='grid-container' style={{ display: 'grid', gridTemplateColumns: gridTemplateColumnsStyle, gridTemplateRows: gridTemplateRowsStyle }}>
