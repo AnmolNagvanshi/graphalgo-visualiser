@@ -15,8 +15,7 @@ const GridNodeType = Object.freeze({
     WORKER_NODE: "worker-node",
 });
 
-const START_POS = {row : 6, col : 2};
-const END_POS = {row: 19, col: 34};
+
 
 export default function Grid() {
 
@@ -66,6 +65,8 @@ export default function Grid() {
 
     const NUM_ROWS =  Math.floor((windowHeight - 100) / 40);; // Math.floor(windowWidth / 42);
     const NUM_COLS = Math.floor((windowWidth - 40) / 40); // Math.floor(windowHeight / 44);
+    const START_POS = {row : Math.floor(NUM_ROWS / 2), col : 2};
+    const END_POS = {row: Math.floor(NUM_ROWS / 2), col: Math.floor(NUM_COLS / 2) + 6};
 
     const gridTemplateRowsStyle = `repeat(${NUM_ROWS}, 40px)`;
     const gridTemplateColumnsStyle = `repeat(${NUM_COLS}, 40px)`;
