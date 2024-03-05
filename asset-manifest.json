@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/graphalgo-visualiser/static/css/main.7e158fed.css",
-    "main.js": "/graphalgo-visualiser/static/js/main.eae4cd92.js",
+    "main.js": "/graphalgo-visualiser/static/js/main.ecf84850.js",
     "static/js/787.2b6c5a30.chunk.js": "/graphalgo-visualiser/static/js/787.2b6c5a30.chunk.js",
     "index.html": "/graphalgo-visualiser/index.html",
     "main.7e158fed.css.map": "/graphalgo-visualiser/static/css/main.7e158fed.css.map",
-    "main.eae4cd92.js.map": "/graphalgo-visualiser/static/js/main.eae4cd92.js.map",
+    "main.ecf84850.js.map": "/graphalgo-visualiser/static/js/main.ecf84850.js.map",
     "787.2b6c5a30.chunk.js.map": "/graphalgo-visualiser/static/js/787.2b6c5a30.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.7e158fed.css",
-    "static/js/main.eae4cd92.js"
+    "static/js/main.ecf84850.js"
   ]
 }
